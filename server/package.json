@@ -1,8 +1,10 @@
 {
   "name": "server",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
-  },
+  "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+  "build": "tsc",
+  "start": "node dist/server.js"
+},
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

@@ -2,87 +2,83 @@
 
 A full-stack Lead Management Dashboard built using the MERN stack with TypeScript, JWT authentication, role-based access control, advanced filtering, pagination, and CSV import/export.
 
----
+## Live Demo
 
-# Live Links
+- Frontend: https://smart-leads-dashboard-ecru.vercel.app/
+- Backend API: https://smart-leads-dashboard-zu8w.onrender.com
 
-## Frontend
+## Tech Stack
 
-https://smart-leads-dashboard-ecru.vercel.app/
-## Backend API
+**Frontend:** React.js, TypeScript, Tailwind CSS, Axios, Vite
 
-https://smart-leads-dashboard-zu8w.onrender.com
+**Backend:** Node.js, Express.js, TypeScript, MongoDB Atlas, Mongoose, JWT Authentication
 
----
+**DevOps:** Docker, Docker Compose, Vercel, Render
 
-# GitHub Repository
+## Features
 
-https://github.com/karthiknani229-art/smart-leads-dashboard
+- User registration and login with JWT authentication
+- Role-based access control (Admin / User)
+- Lead CRUD operations with form validation
+- Advanced filtering, sorting, and debounced search
+- Backend pagination for scalable data handling
+- CSV import and export workflows
+- Protected routes with token-based authorization
+- Toast notifications and responsive UI
+- Docker support for local development
 
----
+## Project Structure
+smart-leads-dashboard/
+│
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── services/
+│   │   └── App.tsx
+│
+├── server/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── index.ts
+│   └── .env.example
+│
+└── docker-compose.yml
 
-# Tech Stack
+## API Endpoints
 
-## Frontend
+**Auth**
 
-* React.js
-* TypeScript
-* Tailwind CSS
-* Axios
-* Vite
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register new user |
+| POST | /api/auth/login | Login and get token |
+| GET | /api/auth/me | Get current user |
 
-## Backend
+**Leads**
 
-* Node.js
-* Express.js
-* TypeScript
-* MongoDB Atlas
-* Mongoose
-* JWT Authentication
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/leads | Get all leads (with filters) |
+| POST | /api/leads | Create new lead |
+| PUT | /api/leads/:id | Update lead |
+| DELETE | /api/leads/:id | Delete lead |
+| POST | /api/leads/import | Import leads via CSV |
 
-## DevOps
+## Local Setup
 
-* Docker
-* Docker Compose
-* Render
-* Vercel
+**1. Clone the repository**
 
----
-
-# Features
-
-* User Registration & Login
-* JWT Authentication
-* Protected Routes
-* Role-Based Access Control
-* Lead CRUD Operations
-* Search & Filtering
-* Sorting
-* Backend Pagination
-* Debounced Search
-* CSV Import & Export
-* Responsive UI
-* Form Validation
-* Toast Notifications
-* Docker Support
-
----
-
-# Environment Variables
-
-Create a `.env` file inside the `server` folder.
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_atlas_uri
-JWT_SECRET=your_secret_key
+```bash
+git clone https://github.com/karthiknani229-art/smart-leads-dashboard.git
+cd smart-leads-dashboard
 ```
 
----
-
-# Local Setup
-
-## Backend
+**2. Backend setup**
 
 ```bash
 cd server
@@ -90,7 +86,12 @@ npm install
 npm run dev
 ```
 
-## Frontend
+Create a `.env` file inside `/server`:
+PORT=5000
+MONGO_URI=your_mongodb_atlas_uri
+JWT_SECRET=your_secret_key
+
+**3. Frontend setup**
 
 ```bash
 cd client
@@ -98,42 +99,20 @@ npm install
 npm run dev
 ```
 
----
-
-# Docker Setup
+## Docker Setup
 
 ```bash
 docker compose up
 ```
 
----
+This starts both the frontend and backend together using Docker Compose.
 
-# API Endpoints
+## Deployment
 
-## Auth
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
 
-* POST `/api/auth/register`
-* POST `/api/auth/login`
-* GET `/api/auth/me`
+## Author
 
-## Leads
-
-* GET `/api/leads`
-* POST `/api/leads`
-* PUT `/api/leads/:id`
-* DELETE `/api/leads/:id`
-* POST `/api/leads/import`
-
----
-
-# Deployment
-
-* Frontend: Vercel
-* Backend: Render
-* Database: MongoDB Atlas
-
----
-
-# Author
-
-Karthik
+Karthik — [GitHub](https://github.com/karthiknani229-art)
